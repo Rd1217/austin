@@ -1,0 +1,55 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: foursquare-db
+    environment:
+      POSTGRES_DB: foursquare
+      POSTGRES_USER: foursquare_user
+      POSTGRES_PASSWORD: foursquare_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U foursquare_user -d foursquare"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    container_name: foursquare-backend
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: foursquare
+      DB_USER: foursquare_user
+      DB_PASSWORD: foursquare_pass
+      CORS_ORIGIN: http://localhost:3001
+      JWT_SECRET_KEY: please-change-this-secret-in-env
+      JWT_EXPIRES_MINUTES: 180
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: Admin@12345
+      MAX_LOGIN_ATTEMPTS: 8
+      LOGIN_WINDOW_SECONDS: 300
+      MAX_CONTACT_SUBMISSIONS: 20
+      CONTACT_WINDOW_SECONDS: 300
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "5001:5000"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: foursquare-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3001:80"
+
+volumes:
+  postgres_data:

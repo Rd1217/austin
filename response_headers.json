@@ -1,0 +1,14 @@
+{
+  "Cache-Control": "private, s-maxage=0",
+  "Pragma": "no-cache",
+  "Content-Type": "text/html",
+  "Expires": "-1",
+  "Server": "Microsoft-IIS/10.0",
+  "X-AspNetMvc-Version": "5.2",
+  "X-AspNet-Version": "4.0.30319",
+  "Set-Cookie": ".AspNet.ApplicationCookie=C7h5TnLmqoVBo8muzYnRYX1uSL3Y5NmK3cnSjLsL-n9R-G3eNdoIxW7BHhGqM1nS7R4kzDL3ECep01o7qh2CgdHn19HxDwC19YRyTu7ZQsBZRoXDpOBz-QUIVpWG5CX-VEwffRA9VmrmOrqRN5AGGPVoLJfZ-vrVFq1F8i4MeOXq55JGOio2SnC_iG0s1g66M3dKV1pShX9eSPeGjJIeRIHfzKQLaMN56VfDagqx_Ixp3d5rP_YgSjtB4-AeBPNHBuN7UdmSWEisiUOM1h8koyvN3raNt7WRW-YAHbRQ6Ub579LUEPOML9ubnEq_sgbIBpFQxPlbHzKGx2CVpcoeAEIHmEtn43z3tZE5sQnA90i-AKlmkN8IgfP9mcAteXuamN2qVB-iDkO4mRFZUV1CQcFOWdSQI-JHleIizUCak8KRbHzRp1Jdd_sUd0f57giHDtUUEiGTeTLdqd71pMJYRdedIVzaUSRT_4YwmsFE5rBanFj9oKLdsehnn5jMNDkubg0CraVggeBML8vRLZivqw; path=/; secure; HttpOnly",
+  "WWW-Authenticate": "Negotiate, NTLM, Basic realm=\"stellar.maksoftbox.com\"",
+  "X-Powered-By": "ASP.NET",
+  "Date": "Wed, 04 Mar 2026 09:00:47 GMT",
+  "Content-Length": "1293"
+}
